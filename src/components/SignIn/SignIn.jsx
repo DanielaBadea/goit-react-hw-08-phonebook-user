@@ -16,7 +16,7 @@ import {NavLink } from "react-router-dom";
 import style from './SignIn.module.css'
 import { logIn } from '../../redux/auth/operations';
 import { useDispatch } from 'react-redux';
-import { useAuth } from 'hooks';
+// import { useAuth } from 'hooks';
 function Copyright(props) {
   return (
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
@@ -36,7 +36,7 @@ const defaultTheme = createTheme();
 
 export default function SignIn() {
 const dispatch = useDispatch();
-const {user} = useAuth();
+// const {user} = useAuth();
 const [errorMessage, setErrorMessage] = React.useState("")
 
 const handleSubmit = e => {
@@ -50,7 +50,7 @@ const handleSubmit = e => {
     setErrorMessage("Email and password cannot be empty.")
     return;
   }
-  const isValidEmail = email === user.email;
+  /* const isValidEmail = email === user.email;
   const isValidPassword = password === user.password;
 
   if (!isValidEmail || !isValidPassword) {
@@ -63,7 +63,7 @@ const handleSubmit = e => {
   console.log("Form values:", {
     email: email,
     password: password,
-  });
+  }); */
 
   dispatch(
     logIn({
